@@ -36,6 +36,8 @@ public class Main {
       var res = ByteBuffer.allocate(4).putInt(correlationId).array();
 
       clientSocket.getOutputStream().write(res);
+      clientSocket.getOutputStream().write(new byte[] {0, 35});
+      
 
       // clientSocket.getOutputStream().write(new byte[] {00, 00, 00, 00, 00, 00, 00, 07} );
     } catch (IOException e) {
