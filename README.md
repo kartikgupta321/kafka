@@ -1,35 +1,27 @@
-[![progress-banner](https://backend.codecrafters.io/progress/kafka/6f57fb46-7845-4ecf-820e-928e159ce2f7)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
+# Kafka Java
 
-This is a starting point for Java solutions to the
-["Build Your Own Kafka" Challenge](https://codecrafters.io/challenges/kafka).
+This project is a minimal implementation of a Kafka-like server in Java.
 
-In this challenge, you'll build a toy Kafka clone that's capable of accepting
-and responding to APIVersions & Fetch API requests. You'll also learn about
-encoding and decoding messages using the Kafka wire protocol. You'll also learn
-about handling the network protocol, event loops, TCP sockets and more.
+## Features
 
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
+- Listens for TCP connections on port 9092
+- Reads and parses incoming binary requests
+- Responds with Kafka-like protocol messages
 
-# Passing the first stage
+## Getting Started
 
-The entry point for your Kafka implementation is in `src/main/java/Main.java`.
-Study and uncomment the relevant code, and push your changes to pass the first
-stage:
+1. **Requirements:**  
+   - Java 8 or newer
+   - Maven (optional, for building)
 
-```sh
-git commit -am "pass 1st stage" # any msg
-git push origin master
-```
+2. **Run the server:**  
+   ```
+   javac src/main/java/Main.java
+   java -cp src/main/java Main
+   ```
 
-That's all!
-
-# Stage 2 & beyond
-
-Note: This section is for stages 2 and beyond.
-
-1. Ensure you have `mvn` installed locally
-1. Run `./your_program.sh` to run your Kafka broker, which is implemented in
-   `src/main/java/Main.java`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
+3. **Test the server:**  
+   Connect using `nc`, `telnet`, or a Kafka client:
+   ```
+   nc localhost 9092
+   ```
